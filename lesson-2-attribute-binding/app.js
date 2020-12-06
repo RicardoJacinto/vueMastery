@@ -6,7 +6,7 @@ var app = new Vue({
       product: 'Socks',
       description: 'A pair of warm, fuzzy socks.',
       image: './assets/images/green-socks.jpg',
-      link: 'fb'
+      link: 'https://www.google.com'
     } 
   })
   
