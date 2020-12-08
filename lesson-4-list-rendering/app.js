@@ -8,7 +8,7 @@ var app = new Vue({
       image: './assets/images/green-socks.jpg',
       url: 'https://www.google.com',
       inStock: true,
-      onSale: false
+      details: ["80% cotton", "20% polyester", "Gender-neutral"]
     } 
   })
   
