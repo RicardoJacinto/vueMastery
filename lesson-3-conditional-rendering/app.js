@@ -6,7 +6,9 @@ var app = new Vue({
       product: 'Socks',
       description: 'A pair of warm, fuzzy socks.',
       image: './assets/images/green-socks.jpg',
-      url: 'https://www.google.com'
+      url: 'https://www.google.com',
+      inStock: true,
+      onSale: false
     } 
   })
   
