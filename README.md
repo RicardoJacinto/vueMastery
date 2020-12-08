@@ -4,8 +4,8 @@
 
 <strong>Vue 2 Mastery Lessons</strong>
 
-Clone the project to your local machine and checkout to lesson-x-start. Example:
-<strong> lesson-3 </strong>
+<p>Clone the project to your local machine and checkout to lesson-x-start. Example:</p>
+<p><strong> lesson-3 </strong> </p>
 
-To start the exercise from the beginning 'undo' the first commit with the following command:
-<strong> $git revert <commit> </strong>
+<p> To start the exercise from the beginning 'undo' the first commit with the following command: </p>
+<p> <strong> $git revert <commit> </strong> </p>
