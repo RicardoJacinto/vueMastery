@@ -8,7 +8,21 @@ var app = new Vue({
       image: './assets/images/green-socks.jpg',
       url: 'https://www.google.com',
       inStock: true,
-      details: ["80% cotton", "20% polyester", "Gender-neutral"]
+      details: ["80% cotton", "20% polyester", "Gender-neutral"],
+      sizes: ['XS', 'S', 'M', 'L', 'XL'],
+      variants: [
+        {
+          variantId: 2234,
+          variantColor: "green"
+        },
+        {
+          variantId: 2235,
+          variantColor: "blue",
+        },
+        {
+
+        }
+      ]
     } 
   })
   
