@@ -23,22 +23,20 @@
               <div class='product-info'>
                 <h1 :href='url'>{{product}}</h1>
                 <p v-if="inStock">In Stock</p>
-                <p v-else> Out of Stock</p>
+                <p v-else :class="{lineThrough: !inStock}"> Out of Stock</p>
                 <p>{{description}}</p>
 
                 <ul>
                   <li v-for="detail in details">{{detail}}</li>
                 </ul>
 
-                 <button @click="addToCart">Add to Cart</button>
-                 <button @click="removeFromCart">Remove from Cart</button>
+                 <button @click="addToCart" :disabled="!inStock" :class="{disabledButton: !inStock}">Add to Cart</button>
                  
                  <div class="cart">
                    <p>Cart({{cart}})</p>
                  </div>
 
-                <div v-for="variant in variants" :key="variant.variantId">
-                  <p @mouseover="changeImg(variant.variantImage)"> {{variant.variantColor}} </p>
+                <div v-for="variant in variants" :key="variant.variantId" class="color-box" :style="{backgroundColor: variant.variantColor}"  @mouseover="changeImg(variant.variantImage)">
                 </div>
 
                 <a :href='url' target='_blank'> Check more products like this</a>

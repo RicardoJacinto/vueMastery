@@ -7,7 +7,7 @@ var app = new Vue({
     description: 'A pair of warm, fuzzy socks.',
     image: './assets/images/green-socks.jpg',
     url: 'https://www.google.com',
-    inStock: true,
+    inStock: false,
     cart: 0,
     details: ["80% cotton", "20% polyester", "Gender-neutral"],
     variants: [
@@ -32,11 +32,7 @@ var app = new Vue({
     },
     changeImg(img){
       this.image = img
-      },
-    removeFromCart(){
-      if(this.cart > 0)
-      this.cart -= 1;
-    }
+      }
   }
 })
 
