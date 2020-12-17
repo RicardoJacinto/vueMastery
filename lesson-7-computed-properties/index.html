@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+
+          <div class="nav-bar"></div>
+          
+        <div class='product'>
+              <div class='product-image'>
+               
+                  <img :src='image' />
+              
+              </div>
+
+              <div class='product-info'>
+                <h1 :href='url'>{{title}}</h1>
+                <p v-if="inStock">In Stock</p>
+                <p v-else :class="{lineThrough: !inStock}"> Out of Stock</p>
+                <p>{{description}}</p>
+
+                <ul>
+                  <li v-for="detail in details">{{detail}}</li>
+                </ul>
+
+                 <button @click="addToCart" :disabled="!inStock" :class="{disabledButton: !inStock}">Add to Cart</button>
+                 
+                 <div class="cart">
+                   <p>Cart({{cart}})</p>
+                 </div>
+
+                <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box" :style="{backgroundColor: variant.variantColor}"  @mouseover="updateProduct(index)">
+                </div>
+
+                <a :href='url' target='_blank'> Check more products like this</a>
+              </div>
+            
+            </div> 
+        </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+           <script src="app.js"></script>
+    
+    </body>
+</html>
