@@ -11,6 +11,7 @@ var app = new Vue({
     inStock: true,
     cart: 0,
     details: ["80% cotton", "20% polyester", "Gender-neutral"],
+    onSale: false,
     variants: [
       {
         variantId: 2234,
@@ -21,12 +22,10 @@ var app = new Vue({
         variantId: 2235,
         variantColor: "blue",
         variantImage: './assets/images/blue-socks.jpg'
-      },
-      {
-
       }
-    ]
+    ]  
   },
+
   methods: {
     addToCart(){
       this.cart += 1;
@@ -41,6 +40,10 @@ var app = new Vue({
     },
     image(){
      return this.variants[this.selectedVariant].variantImage;
+    },
+    saleProduct(){
+      if(this.onSale)
+      return `${this.brand} ${this.product} on sale!!` 
     }
   }
 

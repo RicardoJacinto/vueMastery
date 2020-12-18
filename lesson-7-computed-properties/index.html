@@ -15,15 +15,14 @@
           
         <div class='product'>
               <div class='product-image'>
-               
                   <img :src='image' />
-              
               </div>
 
               <div class='product-info'>
                 <h1 :href='url'>{{title}}</h1>
                 <p v-if="inStock">In Stock</p>
                 <p v-else :class="{lineThrough: !inStock}"> Out of Stock</p>
+                <p v-if="onSale">{{saleProduct}}</p>
                 <p>{{description}}</p>
 
                 <ul>
