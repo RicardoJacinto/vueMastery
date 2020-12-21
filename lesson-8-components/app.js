@@ -1,23 +1,13 @@
-var app = new Vue({
-  el: '#app',
-  data: {
-    premium:true
-  }
-
-})
-
-
 Vue.component('product', {
 
   props: {
-    message: {
+    premium: {
       type: Boolean, 
       required: true,
       default: false
     }
   },
   template: `
- 
         <div class='product'>
               <div class='product-image'>
                   <img :src='image' />
@@ -27,7 +17,9 @@ Vue.component('product', {
                 <h1 :href='url'>{{title}}</h1>
                 <p v-if="inStock">In Stock</p>
                 <p v-else :class="{lineThrough: !inStock}"> Out of Stock</p>
+                <p 
                 <p v-if="onSale">{{saleProduct}}</p>
+                <p> Shipping: {{shipping}} </p>
                 <p>{{description}}</p>
 
                 <ul>
@@ -48,7 +40,6 @@ Vue.component('product', {
             
             </div> 
 ` ,
-
 data(){
   return {
       brand: 'Vue Mastery',
@@ -74,8 +65,7 @@ data(){
       ]
     }
 },
-  
-    methods: {
+  methods: {
       addToCart(){
         this.cart += 1;
       },
@@ -93,8 +83,21 @@ data(){
       saleProduct(){
         if(this.onSale)
         return `${this.brand} ${this.product} on sale!!` 
+      },
+      shipping(){
+        if(this.premium){
+          return "Free"
+        }
+        return 2.99
       }
     }  
+  })
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      premium: false
+    }
   })
 
 
